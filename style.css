@@ -1,0 +1,91 @@
+@media screen and (max-width: 800px) {
+    body {
+        background: fixed;
+    }
+}
+body {
+    background-image: url(./gif/fundo.gif);
+    background-repeat: no-repeat;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    background-size: cover;
+    margin: 0px;
+}
+.content {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+}
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#title {
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: rgb(158, 17, 17);
+    font-size: 100px;
+    width: 100%;
+    text-shadow: 3px 6px #424242;
+}
+#invisible {
+    background: transparent;
+    border: none;
+    font-size:0;
+}
+#continue {
+    font-family: 'Anek Devanagari', sans-serif;
+    background-image: url(./gif/fogo.gif);
+    background-color: rgb(255, 255, 255);
+    background-repeat: repeat;
+    background-position: center;
+    font-weight: 550;
+    text-transform: none;
+    display: inline-block;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    margin: 4px;
+    background-position-y: -25px;
+    background-size: 120px;
+    transition-duration: 0.5s;
+    font-size: 20px;
+    top: 100px;
+    left: 400px;
+    width: 20%;
+}
+.menu {
+    font-family: 'Anek Devanagari', sans-serif;
+    background-image: url(./gif/fogo.gif);
+    font-weight: 550;
+    text-align: center;
+    text-transform: none;
+    display: inline-block;
+    color: black;
+    cursor: pointer;
+    background-repeat: repeat;
+    background-position: center;
+    border-width: 2px;
+    border-end-end-radius: 10px;
+    background-position-y: -25px;
+    background-size: 120px;
+    font-size: 20px;
+    top: 100px;
+    left: 400px;
+    width: 20%;
+    margin: 4px;
+}
+a:link, a:visited {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }

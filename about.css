@@ -4,9 +4,11 @@
     }
 }
 body {
-    background-image: url(./gif/fundo.gif);
+    background-image: url(./gif/memorie.gif);
     background-repeat: no-repeat;
+    background-position: bottom;
     flex-wrap: wrap;
+    align-items: center;
     display: flex;
     width: 100%;
     background-size: cover;

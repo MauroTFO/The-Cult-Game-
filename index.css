@@ -11,6 +11,7 @@ body {
     position: relative;
     flex-wrap: wrap;
     display: flex;
+    right: 0px;
     width: 100%;
     padding: 0px;
     margin: 0px;

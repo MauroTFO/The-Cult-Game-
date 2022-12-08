@@ -7,11 +7,12 @@ body {
     background-image: url(./gif/memorie.gif);
     background-repeat: no-repeat;
     background-position: bottom;
+    background-size: cover;
     position: relative;
     flex-wrap: wrap;
     display: flex;
     width: 100%;
-    background-size: cover;
+    padding: 0px;
     margin: 0px;
 }
 .content {
@@ -43,7 +44,7 @@ body {
     text-shadow: 3px 6px #1f1f1f;
 }
 #continue {
-    font-family: 'Anek Devanagari', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     background-image: url(./gif/fogo.gif);
     background-repeat: no-repeat;
     background-position: center;
@@ -55,19 +56,19 @@ body {
     position: relative;
     white-space: nowrap;
     border: none;
-    padding-top: 6px;
+    padding-top: 10px;
     background-position-y: -38px;
-    background-position-x: 42px;
+    background-position-x: -10px;
     background-size: 45px;
     transition-duration: 0.5s;
     font-size: 20px;
-    top: 100px;
+    top: 120px;
     width: 20%;
     font-weight: 550;
-    text-shadow: -0.08em 0.03em rgba(150, 150, 150, 0.7);
+    text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
 }
 .menu {
-    font-family: 'Anek Devanagari', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     background-image: url(./gif/fogo.gif);
     background-color: transparent;
     text-align: center;
@@ -80,15 +81,15 @@ body {
     cursor: pointer;
     border: none;
     white-space: nowrap;
-    padding-top: 6px;
+    padding-top: 17px;
     background-position-y: -38px;
-    background-position-x: 42px;
+    background-position-x: -10px;
     background-size: 45px;
     font-size: 20px;
-    top: 100px;
+    top: 120px;
     width: 20%;
     font-weight: 550;
-    text-shadow: -0.08em 0.03em rgba(150, 150, 150, 0.7);
+    text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
 }
 a:link, a:visited {
     color: rgb(0, 0, 0);

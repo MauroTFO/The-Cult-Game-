@@ -1,6 +1,5 @@
 <html>
     <head>
-        <audio src="./sound/menu sound.wav" autoplay></audio>
         <style> @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); </style>
         <style> @import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@600&display=swap'); </style>
         <link rel="stylesheet" href="./index.css"/>
@@ -11,6 +10,12 @@
         <script src="./script.js"></script>
     </head>
     <body>
+        <div id="menuAudio">
+        <audio controls autoplay>
+            <source src="./sound/menu sound.wav" type="audio/wav">
+            <source src="./sound/menu sound.ogg" type="audio/ogg">
+        </audio>
+        </div>
         <div class="content">
             <h1 id="title">The Cult</h1>
             <div class="buttons">

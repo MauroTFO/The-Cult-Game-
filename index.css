@@ -6,7 +6,7 @@
 body {
     background-image: url(./gif/memorie.gif);
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
     background-size: cover;
     position: relative;
     flex-wrap: wrap;
@@ -19,8 +19,8 @@ body {
     display: inline-block;
     position: relative;
     object-fit: contain;
-    width: 20%;
-    top: 500px;
+    width: 250px;
+    top: 570px;
     left: 40px;
 }
 .content {
@@ -46,6 +46,7 @@ body {
     position: relative;
     display: inline-block;
     color: rgb(165, 41, 41);
+    margin: 0px;
     font-size: 75px;
     top: 55px;
     width: 100%;
@@ -70,7 +71,7 @@ body {
     background-position-x: -10px;
     background-size: 45px;
     font-size: 20px;
-    top: 120px;
+    top: 150px;
     width: 20%;
     font-weight: 550;
     text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);

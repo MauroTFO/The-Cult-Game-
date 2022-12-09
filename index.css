@@ -15,6 +15,14 @@ body {
     padding: 0px;
     margin: 0px;
 }
+#menuAudio {
+    display: inline-block;
+    position: relative;
+    object-fit: contain;
+    width: 20%;
+    top: 600px;
+    left: 40px;
+}
 .content {
     display: flex;
     white-space: nowrap;

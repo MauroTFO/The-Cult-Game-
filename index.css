@@ -12,6 +12,7 @@ body {
     flex-wrap: wrap;
     display: flex;
     width: 100%;
+    right: 0px;
     padding: 0px;
     margin: 0px;
 }

@@ -45,31 +45,61 @@ body {
     right: -900px;
     max-width: 30%;
 }
-#voltar {
-    font-family: 'Anek Devanagari', sans-serif;
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    white-space: nowrap;
+}
+.voltar {
+    font-family: 'Press Start 2P', cursive;
     background-image: url(./gif/fogo.gif);
-    font-weight: 550;
+    background-color: transparent;
     text-align: center;
-    text-transform: none;
+    text-transform: uppercase;
     display: inline-block;
     color: black;
-    cursor: pointer;
-    position: relative;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-position: center;
-    border-width: 2px;
-    border-end-end-radius: 10px;
-    background-position-y: -25px;
-    background-size: 120px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    padding-top: 17px;
+    text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
+    background-position-y: -30px;
+    background-position-x: 20px;
+    background-size: 45px;
     font-size: 20px;
-    top: 500px;
-    left: 50px;
-    max-width: 10%;
-    margin: 4px;
+    top: 550px;
+    right: 500px;
+    width: 20%;
+    margin: 20px;
+    padding-bottom: 4px;
+    font-weight: 550;
 }
 a:link, a:visited {
     color: rgb(0, 0, 0);
     text-align: center;
     text-decoration: none;
     display: inline-block;
+}
+button {
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transition-property: width;
+    transition-duration: 0.3s;
+    transition-delay: 0.1s;
+}
+button:hover {
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    height: 50%;
 }

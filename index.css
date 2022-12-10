@@ -6,13 +6,12 @@
 body {
     background-image: url(./gif/memorie.gif);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
+    background-position: bottom;
     flex-wrap: wrap;
+    align-items: center;
     display: flex;
     width: 100%;
-    padding: 0px;
+    background-size: cover;
     margin: 0px;
 }
 #menuAudio {
@@ -48,7 +47,7 @@ body {
     color: rgb(165, 41, 41);
     margin: 0px;
     font-size: 75px;
-    top: 55px;
+    top: 100px;
     width: 100%;
     text-shadow: 3px 6px #1f1f1f;
 }
@@ -67,14 +66,15 @@ body {
     border: none;
     white-space: nowrap;
     padding-top: 17px;
+    text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
     background-position-y: -38px;
     background-position-x: -10px;
     background-size: 45px;
     font-size: 20px;
-    top: 150px;
+    top: 220px;
     width: 20%;
     font-weight: 550;
-    text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
+    padding-bottom: 5px;
 }
 a:link, a:visited {
     color: rgb(0, 0, 0);

@@ -10,6 +10,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     display: flex;
+    filter: contrast(1.23);
     width: 100%;
     background-size: cover;
     margin: 0px;
@@ -79,6 +80,7 @@ body {
     margin: 20px;
     padding-bottom: 4px;
     font-weight: 550;
+    filter: drop-shadow(-6px 16px 7px #000000);
 }
 a:link, a:visited {
     color: rgb(0, 0, 0);

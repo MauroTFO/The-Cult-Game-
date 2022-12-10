@@ -6,6 +6,7 @@
 body {
     background-image: url(./gif/memorie.gif);
     background-repeat: no-repeat;
+    filter: contrast(1.23);
     background-position: bottom;
     flex-wrap: wrap;
     align-items: center;
@@ -50,6 +51,7 @@ body {
     top: 100px;
     width: 100%;
     text-shadow: 3px 6px #1f1f1f;
+    filter: drop-shadow(-6px 16px 7px #000000);
 }
 .menu {
     font-family: 'Press Start 2P', cursive;
@@ -65,6 +67,7 @@ body {
     cursor: pointer;
     border: none;
     white-space: nowrap;
+    filter: drop-shadow(-6px 8px 5px #000000);
     padding-top: 17px;
     text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
     background-position-y: -38px;

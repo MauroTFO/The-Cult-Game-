@@ -9,6 +9,7 @@ body {
     background-position: bottom;
     flex-wrap: wrap;
     align-items: center;
+    filter: contrast(1.23);
     display: flex;
     width: 100%;
     background-size: cover;
@@ -67,6 +68,7 @@ body {
     cursor: pointer;
     border: none;
     white-space: nowrap;
+    filter: drop-shadow(-6px 16px 7px #000000);
     padding-top: 17px;
     text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
     background-position-y: -30px;

@@ -4,16 +4,31 @@
     }
 }
 body {
-    background-image: url(./gif/memorie.gif);
+    background: 
+    radial-gradient(circle, transparent 40%, var(--color-v) 75%),
+    linear-gradient(to right, var(--color), var(--color)),
+    var(--image);
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: 
+    var(--blend-top, normal),
+    var(--blend-bottom, saturation),
+    normal;
+  
+  --image: url(./gif/memorie.gif);
+  --color-v: rgba(0, 0, 0, 0.863);
+  --color: rgba(128, 128, 128, 0.158);
+}
+.body {
     background-repeat: no-repeat;
-    background-position: bottom;
+    filter: contrast(1.23);
     flex-wrap: wrap;
     align-items: center;
     display: flex;
-    filter: contrast(1.23);
     width: 100%;
     background-size: cover;
     margin: 0px;
+    background-blend-mode: saturation;
 }
 .content {
     display: flex;
@@ -80,7 +95,7 @@ body {
     margin: 20px;
     padding-bottom: 4px;
     font-weight: 550;
-    filter: drop-shadow(-6px 16px 7px #000000);
+    filter: drop-shadow(-6px 10px 7px #000000);
 }
 a:link, a:visited {
     color: rgb(0, 0, 0);

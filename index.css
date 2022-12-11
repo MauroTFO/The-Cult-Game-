@@ -4,16 +4,31 @@
     }
 }
 body {
-    background-image: url(./gif/memorie.gif);
+    background: 
+    radial-gradient(circle, transparent 40%, var(--color-v) 75%),
+    linear-gradient(to right, var(--color), var(--color)),
+    var(--image);
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: 
+    var(--blend-top, normal),
+    var(--blend-bottom, saturation),
+    normal;
+  
+  --image: url(./gif/memorie.gif);
+  --color-v: rgba(0, 0, 0, 0.863);
+  --color: rgba(128, 128, 128, 0.158);
+}
+.body {
     background-repeat: no-repeat;
     filter: contrast(1.23);
-    background-position: bottom;
     flex-wrap: wrap;
     align-items: center;
     display: flex;
     width: 100%;
     background-size: cover;
     margin: 0px;
+    background-blend-mode: saturation;
 }
 #menuAudio {
     display: inline-block;
@@ -51,7 +66,7 @@ body {
     top: 100px;
     width: 100%;
     text-shadow: 3px 6px #1f1f1f;
-    filter: drop-shadow(-6px 16px 7px #000000);
+    filter: drop-shadow(-6px 12px 7px #000000);
 }
 .menu {
     font-family: 'Press Start 2P', cursive;

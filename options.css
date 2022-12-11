@@ -8,7 +8,7 @@ body {
     radial-gradient(circle, transparent 40%, var(--color-v) 75%),
     linear-gradient(to right, var(--color), var(--color)),
     var(--image);
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   background-blend-mode: 
     var(--blend-top, normal),

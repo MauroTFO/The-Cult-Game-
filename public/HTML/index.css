@@ -4,7 +4,7 @@
     }
 }
 body {
-    background: 
+    /*background: 
     radial-gradient(circle, transparent 40%, var(--color-v) 75%),
     linear-gradient(to right, var(--color), var(--color)),
     var(--image);
@@ -17,18 +17,17 @@ body {
   
   --image: url(./gif/memorie.gif);
   --color-v: rgba(0, 0, 0, 0.863);
-  --color: rgba(128, 128, 128, 0.158);
-}
-.body {
-    background-repeat: no-repeat;
-    filter: contrast(1.23);
-    flex-wrap: wrap;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    background-size: cover;
-    margin: 0px;
-    background-blend-mode: saturation;
+  --color: rgba(128, 128, 128, 0.158);*/
+  background-image: url(./gif/memorie.gif);
+  background-repeat: no-repeat;
+  filter: contrast(1.23);
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  margin: 0px;
+  background-blend-mode: saturation;
 }
 #menuAudio {
     display: inline-block;

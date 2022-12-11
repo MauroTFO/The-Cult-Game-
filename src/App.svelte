@@ -1,5 +1,4 @@
-<html>
-    <head>
+<head>
         <style> @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); </style>
         <style> @import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@600&display=swap'); </style>
         <link rel="stylesheet" href="./html/index.css"/>
@@ -9,11 +8,10 @@
         <link rel="icon" href="./gif/fogo.gif">
         <script src="./script.js"></script>
     </head>
-    <body class="body">
         <div>
         <audio id="menuAudio" autoplay loop>
-            <source src="./sound/menu sound2.wav" type="audio/wav">
-            <source src="./sound/menu sound2.ogg" type="audio/ogg">
+            <source src="./html/sound/menu sound2.wav" type="audio/wav">
+            <source src="./html/sound/menu sound2.ogg" type="audio/ogg">
         </audio>
         </div>
         <div class="content">
@@ -26,5 +24,3 @@
                 <button class="menu"><a href="./html/about.html">Créditos</a></button>
             </div>
         </div>
-    </body>
-</html>

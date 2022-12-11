@@ -4,6 +4,10 @@
     }
 }
 body {
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    width: 100%;
     background: 
     radial-gradient(circle, transparent 40%, var(--color-v) 75%),
     linear-gradient(to right, var(--color), var(--color)),

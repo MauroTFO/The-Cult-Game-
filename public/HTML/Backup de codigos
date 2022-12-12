@@ -1,4 +1,5 @@
-    /*background: 
+body {
+    background: 
     radial-gradient(circle, transparent 40%, var(--color-v) 75%),
     linear-gradient(to right, var(--color), var(--color)),
     var(--image);
@@ -11,4 +12,5 @@
   
   --image: url(./gif/memorie.gif);
   --color-v: rgba(0, 0, 0, 0.863);
-  --color: rgba(128, 128, 128, 0.158);*/
+  --color: rgba(128, 128, 128, 0.158);
+}

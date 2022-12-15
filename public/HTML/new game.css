@@ -9,7 +9,7 @@ body {
     align-items: center;
     display: flex;
     background-repeat: no-repeat;
-    filter: contrast(1.23);
+    filter: contrast(1);
     flex-wrap: wrap;
     align-items: center;
     display: flex;

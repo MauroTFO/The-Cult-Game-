@@ -18,6 +18,10 @@ body {
     margin: 0px;
     background-blend-mode: saturation;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 .content {
     display: flex;
     justify-content: start;
@@ -107,4 +111,40 @@ button:hover {
     display: inline-block;
     width: 25%;
     height: 50%;
+}
+.anderson {
+    display: inline-block;
+    position: relative;
+    top: 50px;
+    left: 500px;
+    object-position: center;
+    width: 10%;
+    height: auto;
+}
+.romulo {
+    display: inline-block;
+    position: relative;
+    top: 50px;
+    left: 1000px;
+    object-position: center;
+    width: 10%;
+    height: auto;
+}
+.mauro {
+    display: inline-block;
+    position: relative;
+    top: 450px;
+    left: 110px;
+    object-position: center;
+    width: 10%;
+    height: auto;
+}
+.andrews {
+    display: inline-block;
+    position: relative;
+    top: 450px;
+    left: 592px;
+    object-position: center;
+    width: 10%;
+    height: auto;
 }

@@ -10,12 +10,12 @@ for (let i = 0; i < collisions.length; i+=40){
 }
 
 class Boundary {
-    static width = 48
-    static height = 48
+    static width = 44.80
+    static height = 44.80
     constructor ({position}) {
         this.position = position
-        this.width = 48
-        this.height = 48
+        this.width = 44.80
+        this.height = 44.80
     }
     draw() {
         c.fillStyle = 'red'

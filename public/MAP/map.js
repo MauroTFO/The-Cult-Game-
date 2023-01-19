@@ -9,23 +9,9 @@ for (let i = 0; i < collisions.length; i += 40) {
     collisionsMap.push(collisions.slice(i, 40 + i))
 }
 
-const caveEnterMap = []
-for (let i = 0; i < caveEnterData.length; i += 40) {
-    caveEnterMap.push(caveEnterData.slice(i, 40 + i))
-}
-
-class Boundary {
-    static width = 64
-    static height = 64
-    constructor({ position }) {
-        this.position = position
-        this.width = 64
-        this.height = 64
-    }
-    draw() {
-        c.fillStyle = 'rgba(255, 0, 0, 0.2)'
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
-    }
+const caveEntersMap = []
+for (let i = 0; i < caveEntersData.length; i += 40) {
+    caveEntersMap.push(caveEntersData.slice(i, 40 + i))
 }
 
 const boundaries = []
@@ -51,12 +37,12 @@ collisionsMap.forEach((row, i) => {
 c.fillStyle = "White"
 c.fillRect(0, 0, canvas.width, canvas.height)
 
-const caveEnter = []
+const caveEnters = []
 
-caveEnterMap.forEach((row, i) => {
+caveEntersMap.forEach((row, i) => {
     row.forEach((symbol, j) => {
         if (symbol === 3690)
-            caveEnter.push(
+            caveEnters.push(
                 new Boundary({
                     position: {
                         x: j * Boundary.width + offset.x,
@@ -82,46 +68,6 @@ playerRightImage.src = '../PLAYER/Player_walk_right.png'
 
 const playerDownImage = new Image()
 playerDownImage.src = '../PLAYER/Player_walk_down.png'
-
-
-class Sprite {
-    constructor({ position, velocity, image, frames = { max: 1 }, sprites }) {
-        this.position = position
-        this.image = image
-        this.frames = { ...frames, val: 0, elapsed: 0 }
-
-        this.image.onload = () => {
-            this.width = this.image.width / this.frames.max
-            this.height = this.image.height / this.frames.max
-        }
-        this.moving = false
-        this.sprites = sprites
-    }
-    draw() {
-        c.drawImage(
-            this.image,
-            this.frames.val * this.width,
-            0,
-            this.image.width / this.frames.max,
-            this.image.height,
-            this.position.x,
-            this.position.y,
-            this.image.width / this.frames.max,
-            this.image.height,
-        )
-
-        if (!this.moving) return
-        if (this.frames.max > 1) {
-            this.frames.elapsed++
-        }
-
-        if (this.frames.elapsed % 10 === 0) {
-            if (this.frames.val < this.frames.max - 1) this.frames.val++
-            else this.frames.val = 0
-        }
-
-    }
-}
 
 
 const player = new Sprite({
@@ -164,7 +110,7 @@ const keys = {
     }
 }
 
-const movables = [background, ...boundaries, ...caveEnter]
+const movables = [background, ...boundaries, ...caveEnters]
 
 function rectangularCollision({ rectangle1, rectangle2 }) {
     return (
@@ -176,41 +122,77 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
 
 }
 
+const cave = {
+    initiated: false
+}
+
 function animate() {
-    window.requestAnimationFrame(animate)
+    const animationID = window.requestAnimationFrame(animate)
     background.draw()
     boundaries.forEach(Boundary => {
         Boundary.draw()
     })
-    caveEnter.forEach((caveEnter) => {
-        caveEnter.draw()
+    caveEnters.forEach((caveEnters) => {
+        caveEnters.draw()
     })
-
     player.draw()
 
-    if (keys.w.pressed || keys .a.pressed || keys.s.pressed || keys.d.pressed) {
-        for (let i = 0; i < caveEnter.length; i++) {
-            const caveEnter = caveEnter[i]
-            const overlappingArea = Math.min (player.position.x + 
-                player.width, caveEnter.position.x + caveEnter.width)
-                Math.max(player.position.x, caveEnter.position.x) * 
-                Math.min(player.position.y + player.height, caveEnter.position.y +
-                caveEnter.width) - Math.max(player.position.y, caveEnter.position.y)
+    let moving = true
+    player.moving = false
+
+    if (cave.enter) return
+
+    if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
+
+        for (let i = 0; i < caveEnters.length; i++) {
+            const caveEnter = caveEnters[i]
+            const overlappingArea = (Math.min(player.position.x + player.width,
+                caveEnter.position.x + caveEnter.width
+            ) -
+                Math.max(player.position.x, caveEnter.position.x
+                )) +
+                (Math.min(player.position.y + player.height,
+                    caveEnter.position.y + caveEnter.height
+                ) -
+                    Math.max(player.position.y, caveEnter.position.y))
             if (
                 rectangularCollision({
                     rectangle1: player,
                     rectangle2: caveEnter
-                }) && 
-                overlappingArea > (player.width * player.height) / 2
+                }) &&
+                overlappingArea > (player.width * player.height) / 2,
+                Math.random() < 0.01
             ) {
                 console.log('cave')
+                window.cancelAnimationFrame(animationID)
+                cave.enter = true
+                gsap.to('#overlappingDiv', {
+                    opacity: 1,
+                    repeat: 2,
+                    yoyo: true,
+                    duration: 0.5,
+                    onComplete() {
+                        gsap.to('#overlappingDiv', {
+                            opacity: 1,
+                            duration: 0.5,
+                            onComplete() {
+                                animateCave()
+                                gsap.to('#overlappingDiv', {
+                                    opacity: 1,
+                                    duration: 0.5,
+                                })
+
+                            }
+                        })
+
+                        animateCave()
+                    }
+                })
                 break
             }
         }
     }
 
-    let moving = true
-    player.moving = false
     if (keys.w.pressed && lastKey === 'w') {
         player.moving = true
         player.image = player.sprites.up
@@ -232,6 +214,7 @@ function animate() {
                 break
             }
         }
+
 
         if (moving)
             movables.forEach((movables) => {
@@ -322,6 +305,20 @@ function animate() {
 }
 
 animate()
+
+const caveBackgroundImage = new Image
+caveBackgroundImage.src = 'Cave.png'
+const caveBackground = new Sprite({
+    position: {
+        x: -500,
+        y: -100
+    },
+    image: caveBackgroundImage
+})
+function animateCave() {
+    window.requestAnimationFrame(animateCave)
+    caveBackground.draw()
+}
 
 let lastKey = ''
 window.addEventListener('keydown', (e) => {

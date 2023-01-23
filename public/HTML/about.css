@@ -4,8 +4,8 @@
     margin: 10;
     padding: 10;
     font-family : 'Press Start 2P', cursive, sans-serif;
-
 }
+
 body {
     background-image: url(./gif/memorie.gif);
     background-repeat: repeat;
@@ -36,6 +36,7 @@ h1 {
     padding: 1%;
 }
 
+
 .buttons {
     width: 100%;
     display: flex;
@@ -45,6 +46,7 @@ h1 {
     white-space: nowrap;
 }
 .voltar {
+    font-family: 'Press Start 2P', cursive;
     background-image: url(./gif/fogo.gif);
     background-color: transparent;
     text-align: center;

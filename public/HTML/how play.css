@@ -1,54 +1,37 @@
-@media screen and (max-width: 800px) {
-    body {
-        background: fixed;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 10;;
+    padding: 10;
+    font-family : 'Press Start 2P', cursive, sans-serif;
 }
+
 body {
-    flex-wrap: wrap;
     background-image: url(./gif/memorie.gif);
-    align-items: center;
-    display: flex;
-    background-repeat: no-repeat;
-    filter: contrast(1);
-    flex-wrap: wrap;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    background-size: cover;
-    margin: 0px;
-    background-blend-mode: saturation;
+    background-size: 100%;
+    background-repeat: repeat;
 }
-.content {
-    display: flex;
-    justify-content: start;
-    width: 100%;
-    flex-direction: column;
-    height: 100%;
-}
-#rodrigo {
-    font-family: 'Anek Devanagari', sans-serif;
-    color: white;
+
+h1 {
     text-align: center;
-    display: inline-block;
-    position: relative;
-    margin: 0px;
-    font-size: 20px;
-    top:485px;
-    left: 100px;
-    max-width: 20%;
+    padding: 1%;
 }
-#anderson {
-    font-family: 'Anek Devanagari', sans-serif;
-    color: white;
+
+b {
+    font-size: 30px;
+}
+
+p {
     text-align: center;
-    display: inline-block;
-    position: relative;
-    margin: 0px;
     font-size: 20px;
-    top: 450px;
-    right: -900px;
-    max-width: 30%;
+    padding: 10px;
+    margin: 50px;
 }
+
+ul {
+    list-style: none;
+}
+
 .buttons {
     width: 100%;
     display: flex;
@@ -77,7 +60,7 @@ body {
     background-position-x: 20px;
     background-size: 45px;
     font-size: 20px;
-    top: 550px;
+    top: 100px;
     right: 500px;
     width: 20%;
     margin: 20px;

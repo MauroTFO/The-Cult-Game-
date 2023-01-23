@@ -5,19 +5,21 @@ canvas.width = 1280
 canvas.height = 720
 
 const collisionsMap = []
-for (let i = 0; i < collisions.length; i += 40) {
-    collisionsMap.push(collisions.slice(i, 40 + i))
+for (let i = 0; i < collisions.length; i += 42) {
+    collisionsMap.push(collisions.slice(i, 42 + i))
 }
 
 const caveEntersMap = []
-for (let i = 0; i < caveEntersData.length; i += 40) {
-    caveEntersMap.push(caveEntersData.slice(i, 40 + i))
+for (let i = 0; i < caveEntersData.length; i += 42) {
+    caveEntersMap.push(caveEntersData.slice(i, 42 + i))
 }
 
 const boundaries = []
+
 const offset = {
     x: 0,
-    y: -3100
+    y: -100
+    // y: -3100
 }
 collisionsMap.forEach((row, i) => {
     row.forEach((symbol, j) => {
@@ -29,8 +31,8 @@ collisionsMap.forEach((row, i) => {
                         y: i * Boundary.height + offset.y
                     }
                 }
-                )
             )
+        )
     })
 })
 
@@ -55,7 +57,7 @@ caveEntersMap.forEach((row, i) => {
 })
 
 const image = new Image()
-image.src = 'Map Out Inside Cave.png'
+image.src = 'Map.png'
 
 const playerUpImage = new Image()
 playerUpImage.src = '../PLAYER/Player_walk_up.png'
@@ -143,15 +145,16 @@ function animate() {
     if (cave.enter) return
 
     if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
-
         for (let i = 0; i < caveEnters.length; i++) {
             const caveEnter = caveEnters[i]
-            const overlappingArea = (Math.min(player.position.x + player.width,
-                caveEnter.position.x + caveEnter.width
-            ) -
-                Math.max(player.position.x, caveEnter.position.x
-                )) +
-                (Math.min(player.position.y + player.height,
+            const overlappingArea =
+                (Math.min(
+                    player.position.x + player.width,
+                    caveEnter.position.x + caveEnter.width
+                ) -
+                    Math.max(player.position.x, caveEnter.position.x)) *
+                (Math.min(
+                    player.position.y + player.height,
                     caveEnter.position.y + caveEnter.height
                 ) -
                     Math.max(player.position.y, caveEnter.position.y))
@@ -160,32 +163,33 @@ function animate() {
                     rectangle1: player,
                     rectangle2: caveEnter
                 }) &&
-                overlappingArea > (player.width * player.height) / 2,
-                Math.random() < 0.01
+                overlappingArea > (player.width * player.height) / 2 &&
+                Math.random() < 0.3
             ) {
-                console.log('cave')
+            
+
                 window.cancelAnimationFrame(animationID)
+
                 cave.enter = true
                 gsap.to('#overlappingDiv', {
                     opacity: 1,
                     repeat: 2,
                     yoyo: true,
-                    duration: 0.5,
+                    duration: 0.4,
                     onComplete() {
                         gsap.to('#overlappingDiv', {
                             opacity: 1,
-                            duration: 0.5,
+                            duration: 0.4,
                             onComplete() {
-                                animateCave()
+                                // activate a new animation loop
+                                initEnter()
+                                animateEnter()
                                 gsap.to('#overlappingDiv', {
-                                    opacity: 1,
-                                    duration: 0.5,
+                                    opacity: 0,
+                                    duration: 0.4
                                 })
-
                             }
                         })
-
-                        animateCave()
                     }
                 })
                 break
@@ -197,7 +201,7 @@ function animate() {
         player.moving = true
         player.image = player.sprites.up
         for (let i = 0; i < boundaries.length; i++) {
-            const boundary = boundaries[i]
+            const boundary = boundaries[i];
             if (
                 rectangularCollision({
                     rectangle1: player,
@@ -205,7 +209,7 @@ function animate() {
                         ...Boundary,
                         position: {
                             x: boundary.position.x,
-                            y: boundary.position.y + 3
+                            y: boundary.position.y - 48
                         }
                     }
                 })
@@ -218,7 +222,7 @@ function animate() {
 
         if (moving)
             movables.forEach((movables) => {
-                movables.position.y += 3
+                movables.position.y += 3.3
             })
     }
     else if (keys.a.pressed && lastKey === 'a') {
@@ -232,7 +236,7 @@ function animate() {
                     rectangle2: {
                         ...Boundary,
                         position: {
-                            x: boundary.position.x + 3,
+                            x: boundary.position.x - 16,
                             y: boundary.position.y
                         }
                     }
@@ -245,7 +249,7 @@ function animate() {
         }
         if (moving)
             movables.forEach((movables) => {
-                movables.position.x += 3
+                movables.position.x += 3.3
             })
     }
     else if (keys.s.pressed && lastKey === 's') {
@@ -260,7 +264,7 @@ function animate() {
                         ...Boundary,
                         position: {
                             x: boundary.position.x,
-                            y: boundary.position.y - 3
+                            y: boundary.position.y - 60
                         }
                     }
                 })
@@ -272,7 +276,7 @@ function animate() {
         }
         if (moving)
             movables.forEach((movables) => {
-                movables.position.y -= 3
+                movables.position.y -= 3.3
             })
     }
     else if (keys.d.pressed && lastKey === 'd') {
@@ -286,7 +290,7 @@ function animate() {
                     rectangle2: {
                         ...Boundary,
                         position: {
-                            x: boundary.position.x - 3,
+                            x: boundary.position.x + 38,
                             y: boundary.position.y
                         }
                     }
@@ -299,24 +303,24 @@ function animate() {
         }
         if (moving)
             movables.forEach((movables) => {
-                movables.position.x -= 3
+                movables.position.x -= 3.3
             })
     }
 }
 
 animate()
 
-const caveBackgroundImage = new Image
+const caveBackgroundImage = new Image()
 caveBackgroundImage.src = 'Cave.png'
 const caveBackground = new Sprite({
     position: {
-        x: -500,
-        y: -100
+        x: 0,
+        y: 0
     },
     image: caveBackgroundImage
 })
-function animateCave() {
-    window.requestAnimationFrame(animateCave)
+function animateEnter() {
+    window.requestAnimationFrame(animateEnter)
     caveBackground.draw()
 }
 
@@ -364,3 +368,5 @@ window.addEventListener('keyup', (e) => {
             break
     }
 })
+
+playerInventory = Inventory()

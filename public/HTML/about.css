@@ -1,58 +1,41 @@
-@media screen and (max-width: 800px) {
-    body {
-        background: fixed;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 10;
+    padding: 10;
+    font-family : 'Press Start 2P', cursive, sans-serif;
+
 }
 body {
-    flex-wrap: wrap;
-    align-items: center;
-    display: flex;
     background-image: url(./gif/memorie.gif);
-    background-repeat: no-repeat;
-    filter: contrast(1);
-    flex-wrap: wrap;
-    align-items: center;
+    background-repeat: repeat;
+    background-size: 100%;
+}
+
+ul {
+    list-style: none;
     display: flex;
-    width: 100%;
-    background-size: cover;
-    margin: 0px;
-    background-blend-mode: saturation;
-}
-img {
-    max-width: 100%;
-    height: auto;
-}
-.content {
-    display: flex;
-    justify-content: start;
-    width: 100%;
-    flex-direction: column;
-    height: 100%;
-}
-#rodrigo {
-    font-family: 'Anek Devanagari', sans-serif;
-    color: white;
     text-align: center;
-    display: inline-block;
-    position: relative;
-    margin: 0px;
-    font-size: 20px;
-    top:485px;
-    left: 100px;
-    max-width: 20%;
 }
-#anderson {
-    font-family: 'Anek Devanagari', sans-serif;
-    color: white;
+
+.sobre {
+    font-size: 24px;
     text-align: center;
-    display: inline-block;
-    position: relative;
-    margin: 0px;
-    font-size: 20px;
-    top: 450px;
-    right: -900px;
-    max-width: 30%;
+    padding: 1%;
 }
+
+p {
+    font-size: 15px;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+h1 {
+    text-align: center;
+    padding: 1%;
+}
+
 .buttons {
     width: 100%;
     display: flex;
@@ -62,7 +45,6 @@ img {
     white-space: nowrap;
 }
 .voltar {
-    font-family: 'Press Start 2P', cursive;
     background-image: url(./gif/fogo.gif);
     background-color: transparent;
     text-align: center;
@@ -81,7 +63,6 @@ img {
     background-position-x: 20px;
     background-size: 45px;
     font-size: 20px;
-    top: 550px;
     right: 500px;
     width: 20%;
     margin: 20px;
@@ -111,40 +92,4 @@ button:hover {
     display: inline-block;
     width: 25%;
     height: 50%;
-}
-.anderson {
-    display: inline-block;
-    position: relative;
-    top: 50px;
-    left: 500px;
-    object-position: center;
-    width: 10%;
-    height: auto;
-}
-.romulo {
-    display: inline-block;
-    position: relative;
-    top: 50px;
-    left: 1000px;
-    object-position: center;
-    width: 10%;
-    height: auto;
-}
-.mauro {
-    display: inline-block;
-    position: relative;
-    top: 450px;
-    left: 110px;
-    object-position: center;
-    width: 10%;
-    height: auto;
-}
-.andrews {
-    display: inline-block;
-    position: relative;
-    top: 450px;
-    left: 592px;
-    object-position: center;
-    width: 10%;
-    height: auto;
 }

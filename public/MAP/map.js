@@ -1,5 +1,6 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
+playerInventory = inventory()
 
 canvas.width = 1280
 canvas.height = 720
@@ -17,8 +18,8 @@ for (let i = 0; i < caveEntersData.length; i += 42) {
 const boundaries = []
 
 const offset = {
-    x: 0,
-    y: -100
+    x: -60,
+    y: -3200
     // y: -3100
 }
 collisionsMap.forEach((row, i) => {
@@ -369,4 +370,3 @@ window.addEventListener('keyup', (e) => {
     }
 })
 
-playerInventory = Inventory()

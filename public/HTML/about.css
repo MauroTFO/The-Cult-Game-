@@ -25,10 +25,8 @@ ul {
 }
 
 p {
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
 }
 
 h1 {

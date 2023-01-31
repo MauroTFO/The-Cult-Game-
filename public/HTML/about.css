@@ -34,6 +34,14 @@ h1 {
     padding: 1%;
 }
 
+a {
+    font-size: 15px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+}
+
+
 
 .buttons {
     width: 100%;

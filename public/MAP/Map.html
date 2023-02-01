@@ -1,3 +1,10 @@
+<head>
+    <title>The Cult</title>
+    <link rel="icon" href="../HTML/gif/fogo.gif">
+</head>
+
+<style> @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); </style>
+<style> @import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@600&display=swap'); </style>
 <style>
     body {
         background-color: rgb(9, 9, 9);
@@ -7,22 +14,66 @@
 </style>
 
 
+
 <div id="Inventory"></div>
 
 <div style="display: inline-block; position: relative;">
-    <div id="overlappingDiv" style="background-color: red; position: absolute;
+    <div id="overlappingDiv" style="margin-top: 10%; margin-left: 20%; background-color: red; position: absolute;
     top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; opacity: 0;"></div>
-    <canvas></canvas>
+    <canvas id="map" style="margin-top: 10%; margin-left: 20%;"></canvas>
+</div>
+
+<div id="esc">
+    <button id="exit"><a href="/">Voltar</a></button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
     integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<canvas></canvas>
+<canvas style="margin-top: 10%; margin-left: 20%;"></canvas>
 <script src="Cave enter.js"></script>
 <script src="collisions.js"></script>
 <script src="../INVENTORY/Inventory.js"></script>
 <script src="classes.js"></script>
 <script src="map.js"></script>
 
+<style>
+    #esc {
+        width: 700px;
+        height: 300px;
+        background-color: transparent;
+        display: inline-block;
+        position: absolute;
+        top: 35%;
+        left: 30%;
+    }
+
+    #esc button {
+        top: 50%;
+        left: 45%;
+        position: absolute;
+        font-family: 'Press Start 2P', cursive;
+        background-image: url(/public/HTML/gif/fogo.gif);
+        background-color: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        display: inline-block;
+        color: black;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        cursor: pointer;
+        border: none;
+        white-space: nowrap;
+        filter: drop-shadow(-6px 8px 5px #000000);
+        padding-top: 17px;
+        text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
+        background-position-y: -38px;
+        background-position-x: -10px;
+        background-size: 45px;
+        font-size: 20px;
+        font-weight: 550;
+        padding-bottom: 5px;
+    }
+</style>

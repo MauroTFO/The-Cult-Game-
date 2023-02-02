@@ -28,7 +28,6 @@ body {
     justify-content: start;
     width: 100%;
     height: 100%;
-    top: 100%;
     flex-direction: column;
     position: absolute;
 }
@@ -47,10 +46,11 @@ body {
     cursor: default;
     position: relative;
     display: inline-block;
+    padding-top: 8%;
     color: rgb(165, 41, 41);
     margin: 0%;
     font-size: 750%;
-    top: 200px;
+    top: 200%;
     text-shadow: 3px 6px #1f1f1f;
     filter: drop-shadow(-6px 12 px 7px #000000);
 }
@@ -69,13 +69,13 @@ body {
     border: none;
     white-space: nowrap;
     filter: drop-shadow(-6px 8px 5px #000000);
-    padding-top: 1.5%;
+    padding-top: 1%;
     text-shadow: -0.08em 0.15em rgba(150, 150, 150, 0.7);
     background-position-y: 75%;
     background-position-x: 1%;
-    background-size: 12%;
+    background-size: 15%;
     font-size: 150%;
-    top: 160%;
+    top: 90%;
     width: 20%;
     font-weight: 550;
     padding-bottom: 0.3%;

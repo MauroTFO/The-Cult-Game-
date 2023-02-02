@@ -2,8 +2,8 @@ const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 playerInventory = inventory()
 
-canvas.width = 1280
-canvas.height = 720
+canvas.width = 1200
+canvas.height = 700
 
 const collisionsMap = []
 for (let i = 0; i < collisions.length; i += 42) {
@@ -18,7 +18,7 @@ for (let i = 0; i < caveEntersData.length; i += 42) {
 const boundaries = []
 
 const offset = {
-    x: -60,
+    x: -100,
     y: -3200
     // y: -3100
 }
@@ -60,6 +60,10 @@ caveEntersMap.forEach((row, i) => {
 const image = new Image()
 image.src = 'Map.png'
 
+const foregroundImage = new Image()
+foregroundImage.src = 'ForegroundObjects.png'
+
+
 const playerUpImage = new Image()
 playerUpImage.src = '../PLAYER/Player_walk_up.png'
 
@@ -98,6 +102,14 @@ const background = new Sprite({
     image: image
 })
 
+const foreground = new Sprite({
+    position: {
+        x: offset.x,
+        y: offset.y
+    },
+    image: foregroundImage
+})
+
 const keys = {
     w: {
         pressed: false
@@ -113,7 +125,7 @@ const keys = {
     }
 }
 
-const movables = [background, ...boundaries, ...caveEnters]
+const movables = [background, ...boundaries, ...caveEnters, foreground]
 
 function rectangularCollision({ rectangle1, rectangle2 }) {
     return (
@@ -139,6 +151,7 @@ function animate() {
         caveEnters.draw()
     })
     player.draw()
+    foreground.draw()
 
     let moving = true
     player.moving = false
@@ -210,7 +223,7 @@ function animate() {
                         ...Boundary,
                         position: {
                             x: boundary.position.x,
-                            y: boundary.position.y - 48
+                            y: boundary.position.y + 3
                         }
                     }
                 })
@@ -237,7 +250,7 @@ function animate() {
                     rectangle2: {
                         ...Boundary,
                         position: {
-                            x: boundary.position.x - 16,
+                            x: boundary.position.x + 3,
                             y: boundary.position.y
                         }
                     }
@@ -265,7 +278,7 @@ function animate() {
                         ...Boundary,
                         position: {
                             x: boundary.position.x,
-                            y: boundary.position.y - 60
+                            y: boundary.position.y - 3
                         }
                     }
                 })
@@ -291,7 +304,7 @@ function animate() {
                     rectangle2: {
                         ...Boundary,
                         position: {
-                            x: boundary.position.x + 38,
+                            x: boundary.position.x - 3,
                             y: boundary.position.y
                         }
                     }

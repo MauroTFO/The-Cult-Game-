@@ -8,27 +8,26 @@
     body {
         background-color: rgb(9, 9, 9);
         border: none;
-        padding: none;
-    }
+     }
 </style>
 
 <div style="display: inline-block; position: relative;">
     <div id="overlappingDiv" style="background-color: red; position: relative;
-    top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; opacity: 0; margin: 0;"></div>
-    <canvas style="margin-top: 6%; margin-left: 20%;"></canvas>
+    top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; opacity: 0; margin: 0; flex-wrap: wrap; display: flex;"></div>
+    <canvas style="margin-top: 15%; margin-left: 40%; display: flex; flex-wrap: wrap;"></canvas>
 </div>
 
 <div id="esc">
-    <button id="exit"><a href="/">Voltar</a></button>
+    <button><a href="/">Voltar</a></button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
     integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<div style="display: inline-block; position: absolute;">
-    <canvas style="margin-top: 6%; margin-left: 20%;"></canvas>
-</div>
+<!-- <div style="display: inline-block; position: absolute;">
+    <canvas style="margin-top: 6%; margin-left: 20%; display: flex; flex-wrap: wrap;"></canvas>
+</div> -->
 
 <head>
     <title>The Cult</title>
@@ -41,7 +40,7 @@
 <script src="classes.js"></script>
 <script src="map.js"></script>
 
-<style>
+<style id="pressed">
     /*#esc {
         width: 40%;
         height: 40%;

@@ -18,7 +18,7 @@ for (let i = 0; i < caveEntersData.length; i += 42) {
 const boundaries = []
 
 const offset = {
-    x: -100,
+    x: -105,
     y: -3200
     // y: -3100
 }
@@ -320,6 +320,8 @@ function animate() {
                 movables.position.x -= 3.3
             })
     }
+    else if (keys.Escape.pressed && lastKey === 'Escape') {
+    }
 }
 
 animate()
@@ -360,6 +362,11 @@ window.addEventListener('keydown', (e) => {
             keys.d.pressed = true
             lastKey = 'd'
             break
+        
+        case 'Escape':
+            keys.Escape.pressed
+            lastKey = 'Escape'
+            break
     }
 })
 
@@ -379,6 +386,10 @@ window.addEventListener('keyup', (e) => {
 
         case 'd':
             keys.d.pressed = false
+            break
+
+        case 'Escape':
+            keys.Escape.pressed = false
             break
     }
 })

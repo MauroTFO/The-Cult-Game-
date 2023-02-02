@@ -63,7 +63,6 @@ image.src = 'Map.png'
 const foregroundImage = new Image()
 foregroundImage.src = 'ForegroundObjects.png'
 
-
 const playerUpImage = new Image()
 playerUpImage.src = '../PLAYER/Player_walk_up.png'
 
@@ -319,8 +318,6 @@ function animate() {
             movables.forEach((movables) => {
                 movables.position.x -= 3.3
             })
-    }
-    else if (keys.Escape.pressed && lastKey === 'Escape') {
     }
 }
 

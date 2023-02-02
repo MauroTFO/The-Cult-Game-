@@ -46,7 +46,9 @@ b {
     
 }
 
-
+img {
+    border: 5px solid black;
+}
 
 .buttons {
     width: 100%;

@@ -22,7 +22,6 @@
             <button class="menu"><a href="/map/Map.html">Jogar</a></button>
             <button class="menu"><a href="/html/options.html">Opções</a></button>
             <button class="menu"><a href="/html/how play.html">Como Jogar</a></button>
-            <button class="menu"><a href="/html/about.html">Sobre</a></button>
             <button class="menu"><a href="/html/about.html">Créditos</a></button>
     </div>
 </div>
